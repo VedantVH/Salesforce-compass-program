@@ -1,34 +1,34 @@
-# ComplyLens
+# 🛡️ ComplyLens
 
-ComplyLens is a platform-native Salesforce compliance operations application designed to assess customer and contact records against a deterministic interpretation of India’s Digital Personal Data Protection Act, 2023 (DPDP).
+ComplyLens is a **platform-native Salesforce compliance operations application** engineered to evaluate customer and contact records against a deterministic interpretation of India’s **Digital Personal Data Protection Act, 2023 (DPDP)**. 🇮🇳
 
-It is a Salesforce-native application. There is no external Express, NestJS, Java, Node.js, or Python backend. All data storage, deterministic evaluation, and business logic run directly on the Salesforce platform using **Salesforce Custom Objects** and **Apex Services**.
+Unlike hybrid applications, ComplyLens is completely Salesforce-native. There is no external Express, NestJS, Java, Node.js, or Python backend. All data storage, deterministic evaluation, and business logic run directly on the Salesforce platform using **Salesforce Custom Objects** and **Apex Services**.
 
-> **Core design rule:** The deterministic Apex rule engine decides the score and status. Agentforce can explain an existing result and trigger approved actions, but it cannot create, change, or override a compliance decision.
+> ⚠️ **Core design rule:** The deterministic Apex rule engine decides the score and status. Agentforce can explain an existing result and trigger approved actions, but it cannot create, change, or override a compliance decision.
 
-## Contents
+## 📌 Contents
 
-- [Demo walkthrough](#demo-walkthrough)
-- [What is the backend?](#what-is-the-backend)
-- [Architecture](#architecture)
-- [Features](#features)
-- [Technology stack](#technology-stack)
-- [Project structure](#project-structure)
-- [Compliance rules and scoring](#compliance-rules-and-scoring)
-- [Database model](#database-model)
-- [Apex Action / Invocable Reference](#apex-action--invocable-reference)
-- [Mistral / Agentforce Integration](#mistral--agentforce-integration)
-- [Local development](#local-development)
-- [Testing and verification](#testing-and-verification)
-- [Deployment](#deployment)
-- [Security notes](#security-notes)
-- [Troubleshooting](#troubleshooting)
 
-## Demo walkthrough
+- [🎬 Demo walkthrough](#demo-walkthrough)
+- [💻 What is the backend?](#what-is-the-backend)
+- [📐 Architecture](#architecture)
+- [🚀 Features](#features)
+- [🧰 Technology stack](#technology-stack)
+- [📂 Project structure](#project-structure)
+- [📏 Compliance rules and scoring](#compliance-rules-and-scoring)
+- [🗄️ Database model](#database-model)
+- [🔌 Apex Action / Invocable Reference](#apex-action--invocable-reference)
+- [🤖 Mistral / Agentforce Integration](#mistral--agentforce-integration)
+- [🛠️ Local development](#local-development)
+- [🧪 Testing and verification](#testing-and-verification)
+- [🔒 Security notes](#security-notes)
+- [🔍 Troubleshooting](#troubleshooting)
+
+## 🎬 Demo walkthrough
 
 For a complete walkthrough of assessments, simulations, audit events, recommendations, and Agentforce explanations, please refer to the project documentation and LWC dashboard views.
 
-## What is the backend?
+## 💻 What is the backend?
 
 The backend consists of four layers:
 
@@ -41,7 +41,7 @@ The UI or Agentforce Copilot triggers Apex methods (such as `ComplianceAssessmen
 
 Agentforce is used purely as an explanation layer. It reads the persisted results and audit logs to generate guided explanations for compliance officers. It does not have access to any write operations capable of changing compliance scores or statuses unless explicitly routed through approved Apex action methods.
 
-## Architecture
+## 📐 Architecture
 
 ```mermaid
 flowchart LR
@@ -79,7 +79,7 @@ sequenceDiagram
     Controller-->>UI: Return ID / Summary
 ```
 
-## Features
+## 🚀 Features
 
 - Native Salesforce login, authentication, and session management
 - Enterprise dashboard tracking compliance rate, at-risk contacts, and critical violations
@@ -93,7 +93,7 @@ sequenceDiagram
 - Integration with Agentforce Copilots via invocable Apex actions
 - Seamless support for both single-contact and batch assessment execution
 
-## Technology stack
+## 🧰 Technology stack
 
 | Area | Technology |
 |---|---|
@@ -107,7 +107,7 @@ sequenceDiagram
 | Development CLI | Salesforce CLI (`sf` / `sfdx`) |
 | Testing framework | Apex Test Suite (`@isTest`) |
 
-## Project structure
+## 📂 Project structure
 
 ```text
 salesforce/
@@ -147,7 +147,7 @@ salesforce/
 └── sfdx-project.json                                      Salesforce DX project configuration
 ```
 
-## Compliance rules and scoring
+## 📏 Compliance rules and scoring
 
 Every contact begins with a score of 100. Failed rules subtract points based on rule severity.
 
@@ -180,7 +180,7 @@ The setup data includes scenario-based contacts designed to verify each rule fai
 
 ---
 
-## Database model
+## 🗄️ Database model
 
 ComplyLens utilizes the following custom objects and fields:
 
@@ -195,7 +195,7 @@ ComplyLens utilizes the following custom objects and fields:
 
 ---
 
-## Apex Action / Invocable Reference
+## 🔌 Apex Action / Invocable Reference
 
 To integrate with Agentforce, the application exposes public invocable methods via [AgentforceComplianceActions.cls](force-app/main/default/classes/AgentforceComplianceActions.cls).
 
@@ -213,7 +213,7 @@ To integrate with Agentforce, the application exposes public invocable methods v
 
 ---
 
-## Mistral / Agentforce Integration
+## 🤖 Mistral / Agentforce Integration
 
 Agentforce is configured as an explainer layer:
 1. When a user asks: *"Why is Arjun Rao non-compliant?"*, Agentforce calls the `getReadinessReport` invocable action.
@@ -223,7 +223,7 @@ Agentforce is configured as an explainer layer:
 
 ---
 
-## Local development
+## 🛠️ Local development
 
 ### Prerequisites
 - Salesforce CLI (`sf` or `sfdx`)
@@ -249,7 +249,7 @@ sf apex run test --target-org complylens-org --wait 10
 
 ---
 
-## Testing and verification
+## 🧪 Testing and verification
 
 The Apex test suite covers all logic branches:
 - [DPDPRuleEngineServiceTest.cls](force-app/main/default/classes/DPDPRuleEngineServiceTest.cls): Verifies evaluation logic across all three rules (Consent, Retention, Children's Privacy).
@@ -262,7 +262,7 @@ The Apex test suite covers all logic branches:
 
 ---
 
-## Security notes
+## 🔒 Security notes
 
 - All database queries and writes follow Salesforce governor limits and best practices (bulkified queries).
 - Real data assessments must be executed in sandboxes or verified secure environments.
@@ -270,7 +270,7 @@ The Apex test suite covers all logic branches:
 
 ---
 
-## Troubleshooting
+## 🔍 Troubleshooting
 
 ### Deployment Conflicts
 If deployment fails due to missing custom objects or fields, verify that `Compliance_Assessment__c`, `Compliance_Rule__c`, `Compliance_Result__c`, `Compliance_Recommendation__c`, and `Compliance_Audit__c` custom objects have been properly created on the target Salesforce Org.
