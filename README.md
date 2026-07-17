@@ -1,8 +1,11 @@
-# 🛡️ ComplyLens: Enterprise-Grade DPDP Compliance Engine for Salesforce
+# 🛡️ ComplyLens — DPDP Compliance Engine on Salesforce Platform
 
-ComplyLens is a high-performance, platform-native compliance operations application designed to evaluate Salesforce Customer and Contact records against India's **Digital Personal Data Protection Act, 2023 (DPDP)**. 🇮🇳
+> 🎓 **A capstone project built under the mentorship and guidance of a Salesforce Developer Team as part of the Salesforce Compass Program.**
+> This is an independent student project and is **not affiliated with, endorsed by, or a product of Salesforce Inc.**
 
-Built with a native-first architecture, ComplyLens operates entirely within your Salesforce Org. There are no external middleware, Express/Node.js dependencies, or third-party APIs. All processing, deterministic evaluation, and audit histories are executed natively using **Apex Services** and **Salesforce Custom Objects** to maintain zero-data-leakage compliance boundaries.
+ComplyLens is a compliance operations application built on the Salesforce platform that evaluates customer and contact records against India's **Digital Personal Data Protection Act, 2023 (DPDP)**. 🇮🇳
+
+Developed as part of a structured mentorship program with active guidance from Salesforce developers, this project explores how the full Salesforce technology stack — Apex, LWC, Custom Objects, and Agentforce — can be applied to solve a real-world regulatory compliance problem. All business logic, data storage, and AI orchestration are implemented natively inside the Salesforce platform using **Apex Service Classes** and **Salesforce Custom Objects**.
 
 ---
 
