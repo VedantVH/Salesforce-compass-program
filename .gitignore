@@ -1,0 +1,14 @@
+# Salesforce DX Git Ignore
+.sfdx/
+.sf/
+.localdevserver/
+.DS_Store
+*.log
+node_modules/
+.project
+.classpath
+.settings/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.vscode/

@@ -1,0 +1,36 @@
+name: Apex Code Quality Scan (PMD)
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  pmd-analysis:
+    name: PMD Static Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Java (Required for PMD)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '11'
+
+      - name: Install PMD
+        run: |
+          PMD_VERSION=7.0.0
+          wget https://github.com/pmd/pmd/releases/download/pmd_releases%2F${PMD_VERSION}/pmd-dist-${PMD_VERSION}-bin.zip
+          unzip pmd-dist-${PMD_VERSION}-bin.zip
+          mv pmd-bin-${PMD_VERSION} pmd
+
+      - name: Run PMD Apex Scan
+        run: |
+          ./pmd/bin/pmd check \
+            -d force-app \
+            -R category/apex/design.xml,category/apex/security.xml,category/apex/bestpractices.xml \
+            -f text \
+            || true # Prevent build failure on warnings, showing issues clearly
