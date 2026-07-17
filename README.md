@@ -207,13 +207,3 @@ The project is protected by a comprehensive Apex unit test suite targeting 90%+ 
 *   **Mock Verification**: All simulation services are design-isolated, meaning compliance officers can forecast fixes without mutating real contact data.
 
 ---
-
-## 💼 Author & Portfolio Info
-
-If you are a Recruiter or Hiring Manager looking to discuss this project, my engineering background, or opportunities in Salesforce Development/Engineering:
-
-*   **Name**: [Your Name]
-*   **LinkedIn**: [linkedin.com/in/yourprofile](https://www.linkedin.com/in/yourprofile)
-*   **Email**: [your.email@example.com](mailto:your.email@example.com)
-*   **Portfolio**: [yourportfolio.com](https://yourportfolio.com)
-*   **GitHub Project**: [VedantVH/salesforce-compass-program](https://github.com/VedantVH/salesforce-compass-program)
