@@ -3,7 +3,7 @@
 > 🎓 **A capstone project built under the mentorship and guidance of a Salesforce Developer Team as part of the Salesforce Compass Program.**
 > This is an independent student project and is **not affiliated with, endorsed by, or a product of Salesforce Inc.**
 
-ComplyLens is a compliance operations application built on the Salesforce platform that evaluates customer and contact records against India's **Digital Personal Data Protection Act, 2023 (DPDP)**. 🇮🇳
+ComplyLens is a compliance operations application built on the Salesforce platform that evaluates customer and contact records against India's **Digital Personal Data Protection Act, 2023 (DPDP)**
 
 Developed as part of a structured mentorship program with active guidance from Salesforce developers, this project explores how the full Salesforce technology stack — Apex, LWC, Custom Objects, and Agentforce — can be applied to solve a real-world regulatory compliance problem. All business logic, data storage, and AI orchestration are implemented natively inside the Salesforce platform using **Apex Service Classes** and **Salesforce Custom Objects**.
 
