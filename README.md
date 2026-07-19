@@ -1,4 +1,4 @@
-# 🛡️ ComplyLens — DPDP Compliance Engine on Salesforce Platform
+# 🛡️ ComplyLens — DPDP Compliance Engine
 
 > 🎓 **A capstone project built under the mentorship and guidance of a Salesforce Developer Team as part of the Salesforce Compass Program.**
 > This is an independent student project and is **not affiliated with, endorsed by, or a product of Salesforce Inc.**
