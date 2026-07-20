@@ -179,7 +179,7 @@ The project is protected by a comprehensive Apex unit test suite targeting 90%+ 
 
 1.  **Clone the Repository**:
     ```bash
-    https://github.com/VedantVH/Salesforce-compass-program.git
+    https://github.com/VedantVH/ComplyLens.git
     cd salesforce-compass-program/salesforce
     ```
 
